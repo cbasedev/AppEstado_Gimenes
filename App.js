@@ -1,11 +1,11 @@
-import { React } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { ShopNavigator } from './navigation/ShopNavigator';
-import { useFonts } from 'expo-font';
 import { AppLoadding } from 'expo-app-loading';
-
+import MainNavigation from './navigation';
+import { React } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
 
 export default function App() {
+  
   const [loaded] = useFonts({
     OpenSansRegular: require('./assets/fonts/OpenSans-Regular.ttf'),
     OpenSansBold: require('./assets/fonts/OpenSans-Bold.ttf'),
@@ -14,15 +14,6 @@ export default function App() {
   if (!loaded) return <AppLoadding/>
 
   return (
-    <ShopNavigator/>
+    <MainNavigation/>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
